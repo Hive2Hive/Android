@@ -14,7 +14,7 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
 /**
- * Creates multiple peers which bootstrap to an existing peer.
+ * Creates multiple peers. The first one is the 'initial' peer, all others bootstrap to it.
  * This can be used to increase the number of seed nodes in the P2P network.
  * 
  * @author Nico
@@ -32,35 +32,38 @@ public class MultiStableH2HPeers {
 
 		Integer numPeers = Integer.valueOf(args[0]);
 
-		for (int i = 0; i < numPeers; i++) {
-			Config config = ConfigFactory.load("deployment.conf");
-			int port = config.getInt("Port") + i;
-			boolean bootstrapEnabled = config.getBoolean("Bootstrap.enabled");
+		Config config = ConfigFactory.load("deployment-multiple.conf");
+		int startPort = config.getInt("StartPort");
+		String externalAddressString = config.getString("ExternalAddress");
+		InetAddress externalAddress = null;
+		if (!"auto".equalsIgnoreCase(externalAddressString)) {
+			externalAddress = InetAddress.getByName(externalAddressString);
+		}
 
-			if (!bootstrapEnabled) {
-				logger.error("Bootstrapping should be enabled. Create a stable peer first!", numPeers);
-				return;
-			}
-
-			String inetString = config.getString("Bootstrap.address");
-			InetAddress bootstrapAddress = InetAddress.getByName(inetString);
-			int bootstrapPort = config.getInt("Bootstrap.port");
-
-			InetAddress externalAddress = null;
-			String externalAddressString = config.getString("ExternalAddress");
-			if (!"auto".equalsIgnoreCase(externalAddressString)) {
-				externalAddress = InetAddress.getByName(externalAddressString);
-			}
-
-			boolean acceptData = config.getBoolean("AcceptData");
-
-			boolean enableRelaying = config.getBoolean("Relay.enabled");
+		boolean acceptData = config.getBoolean("AcceptData");
+		boolean enableRelaying = config.getBoolean("Relay.enabled");
+		AndroidRelayServerConfig androidServer = null;
+		if (enableRelaying) {
 			String gcmKey = config.getString("Relay.GCM.api-key");
 			long bufferTimeout = config.getDuration("Relay.GCM.buffer-age-limit", TimeUnit.MILLISECONDS);
 			MessageBufferConfiguration buffer = new MessageBufferConfiguration().bufferAgeLimit(bufferTimeout);
-			AndroidRelayServerConfig androidServer = new AndroidRelayServerConfig(gcmKey, 5, buffer);
+			androidServer = new AndroidRelayServerConfig(gcmKey, 5, buffer);
+		}
 
-			new StableH2HPeer(port, bootstrapEnabled, bootstrapAddress, bootstrapPort, externalAddress, acceptData,
+		for (int i = 0; i < numPeers; i++) {
+			InetAddress bootstrapAddress = null;
+			if (i > 0) {
+				if (externalAddress == null) {
+					// bootstrap by default to 127.0.0.1
+					bootstrapAddress = InetAddress.getLocalHost();
+				} else {
+					// bootstrap to external address if existing
+					bootstrapAddress = externalAddress;
+				}
+			}
+
+			// iterate port to not reuse the same twice
+			new StableH2HPeer(startPort + i, i != 0, bootstrapAddress, startPort, externalAddress, acceptData,
 					enableRelaying, androidServer);
 		}
 

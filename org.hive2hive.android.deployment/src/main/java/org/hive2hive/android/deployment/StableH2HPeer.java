@@ -38,7 +38,7 @@ public class StableH2HPeer {
 	private static final Logger logger = LoggerFactory.getLogger(StableH2HPeer.class);
 
 	public static void main(String[] args) throws UnknownHostException {
-		Config config = ConfigFactory.load("deployment.conf");
+		Config config = ConfigFactory.load("deployment-single.conf");
 		int port = config.getInt("Port");
 		boolean bootstrapEnabled = config.getBoolean("Bootstrap.enabled");
 		String inetString = config.getString("Bootstrap.address");
@@ -54,10 +54,13 @@ public class StableH2HPeer {
 		boolean acceptData = config.getBoolean("AcceptData");
 
 		boolean enableRelaying = config.getBoolean("Relay.enabled");
-		String gcmKey = config.getString("Relay.GCM.api-key");
-		long bufferTimeout = config.getDuration("Relay.GCM.buffer-age-limit", TimeUnit.MILLISECONDS);
-		MessageBufferConfiguration buffer = new MessageBufferConfiguration().bufferAgeLimit(bufferTimeout);
-		AndroidRelayServerConfig androidServer = new AndroidRelayServerConfig(gcmKey, 5, buffer);
+		AndroidRelayServerConfig androidServer = null;
+		if (enableRelaying) {
+			String gcmKey = config.getString("Relay.GCM.api-key");
+			long bufferTimeout = config.getDuration("Relay.GCM.buffer-age-limit", TimeUnit.MILLISECONDS);
+			MessageBufferConfiguration buffer = new MessageBufferConfiguration().bufferAgeLimit(bufferTimeout);
+			androidServer = new AndroidRelayServerConfig(gcmKey, 5, buffer);
+		}
 
 		new StableH2HPeer(port, bootstrapEnabled, bootstrapAddress, bootstrapPort, externalAddress, acceptData,
 				enableRelaying, androidServer);
