@@ -25,14 +25,9 @@ public class MultiStableH2HPeers {
 	private static final Logger logger = LoggerFactory.getLogger(StableH2HPeer.class);
 
 	public static void main(String[] args) throws UnknownHostException {
-		if (args.length == 0) {
-			logger.error("Integer argument for number of peers required!");
-			return;
-		}
-
-		Integer numPeers = Integer.valueOf(args[0]);
 
 		Config config = ConfigFactory.load("deployment-multiple.conf");
+		int numPeers = config.getInt("NumPeers");
 		int startPort = config.getInt("StartPort");
 		String externalAddressString = config.getString("ExternalAddress");
 		InetAddress externalAddress = null;

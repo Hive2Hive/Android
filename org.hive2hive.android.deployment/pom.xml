@@ -55,7 +55,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>org.hive2hive.android.deployment.StableH2HPeer</mainClass>
+							<mainClass>org.hive2hive.android.deployment.MultiStableH2HPeers</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
@@ -64,7 +64,8 @@
 						</manifestEntries>
 					</archive>
 					<excludes>
-						<exclude>deployment.conf</exclude>
+						<exclude>deployment-single.conf</exclude>
+						<exclude>deployment-multiple.conf</exclude>
 						<exclude>logback.xml</exclude>
 					</excludes>
 				</configuration>
