@@ -1,0 +1,16 @@
+# Eclipse #
+
+/bin
+/target
+/logs
+.project
+.classpath
+.settings
+
+# IntelliJ IDEA #
+.idea
+*.iml
+
+# Mac #
+
+.DS_Store
