@@ -65,7 +65,7 @@
 					</archive>
 					<excludes>
 						<exclude>deployment-single.conf</exclude>
-						<exclude>deployment-multiple.conf</exclude>
+						<exclude>deployment.conf</exclude>
 						<exclude>logback.xml</exclude>
 					</excludes>
 				</configuration>

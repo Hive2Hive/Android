@@ -26,7 +26,7 @@ public class MultiStableH2HPeers {
 
 	public static void main(String[] args) throws UnknownHostException {
 
-		Config config = ConfigFactory.load("deployment-multiple.conf");
+		Config config = ConfigFactory.load("deployment.conf");
 		int numPeers = config.getInt("NumPeers");
 		int startPort = config.getInt("StartPort");
 		String externalAddressString = config.getString("ExternalAddress");
