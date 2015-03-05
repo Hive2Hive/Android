@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_cat_networking">
+
+        <org.hive2hive.mobile.preference.PortPickerPreference
+            android:defaultValue="4622"
+            android:key="@string/pref_port_key"
+            android:title="@string/pref_port"/>
+
+        <ListPreference
+            android:defaultValue="120"
+            android:dialogTitle="@string/pref_map_update_interval"
+            android:entries="@array/mapUpdateInterval"
+            android:entryValues="@array/mapUpdateIntervalValues"
+            android:key="@string/pref_map_update_interval_key"
+            android:title="@string/pref_map_update_interval"/>
+
+        <EditTextPreference
+            android:inputType="number"
+            android:key="@string/pref_gcm_sender_key"
+            android:title="@string/pref_gcm_sender"
+            android:defaultValue="not provided"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_cat_about">
+
+        <Preference
+            android:key="@string/pref_app_version_key"
+            android:persistent="false"
+            android:selectable="false"
+            android:title="@string/pref_app_version"/>
+        <Preference
+            android:key="@string/pref_h2h_version_key"
+            android:persistent="false"
+            android:selectable="false"
+            android:title="@string/pref_h2h_version"/>
+        <Preference
+            android:key="@string/pref_path_key"
+            android:persistent="false"
+            android:selectable="false"
+            android:title="@string/pref_path"/>
+        <Preference
+            android:key="@string/pref_author"
+            android:persistent="false"
+            android:selectable="false"
+            android:summary="Nico Rutishauser"
+            android:title="@string/pref_author"/>
+
+        <Preference
+            android:persistent="false"
+            android:summary="@string/pref_contact_summary"
+            android:title="@string/pref_contact">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/pref_contact_uri">
+                <extra
+                    android:name="android.intent.extra.SUBJECT"
+                    android:value="@string/pref_contact_subject"/>
+            </intent>
+            />
+        </Preference>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

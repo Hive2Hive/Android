@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp">
+
+        <!-- The icon (folder or file) -->
+        <ImageView
+            android:id="@+id/file_list_icon"
+            android:layout_width="50dip"
+            android:layout_height="50dip"/>
+
+        <!-- Name of the file -->
+        <TextView
+            android:id="@+id/file_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_toRightOf="@+id/file_list_icon"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="#666666"/>
+
+        <!-- Number of containing items (folder) or the size of the item (file) -->
+        <TextView
+            android:id="@+id/file_list_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/file_list_name"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/file_list_icon"
+            android:textColor="#7A7A7A"/>
+
+        <!-- The last modification date -->
+        <TextView
+            android:id="@+id/file_list_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/file_list_name"
+            android:layout_marginLeft="5dip"
+            android:textColor="#7A7A7A"/>
+
+        <ProgressBar
+            android:id="@+id/file_list_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/file_list_name"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/file_list_date"
+            android:layout_toRightOf="@id/file_list_details"
+            android:indeterminate="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,59 @@
+<resources>
+    <string name="files_error_filelist">Cannot load the file list. Use refresh button to re-try</string>
+    <string name="files_error_delete_failed">Failed to delete the file</string>
+    <string name="files_error_delete_nonempty">Non-empty folders cannot be deleted</string>
+    <string name="files_error_copy">Failed to add a copy of the selected file</string>
+    <string name="files_error_upload">Uploading file %1$s failed</string>
+    <string name="files_error_download">Downloading file %1$s failed</string>
+    <string name="files_error_open">We did not find any application that can open this kind of files</string>
+    <string name="files_error_browse">Please install a file manager to browse your files</string>
+    <string name="files_error_share">Cannot share the folder. Does user \'%1$s\' really exist?</string>
+    <string name="files_error_readonly">You only have read access to this folder</string>
+
+    <string name="files_logout_hint">Press again to logout</string>
+
+    <string name="folder_empty">empty</string>
+    <string name="folder_single_item">1 item</string>
+    <string name="folder_items">%1$d items</string>
+
+    <string name="progress_files_title">Loading file list…</string>
+
+    <!-- Context menu items -->
+    <string name="context_files_download">Download</string>
+    <string name="context_files_update">Upload changes</string>
+    <string name="context_files_open">Open</string> <!-- Also for folders -->
+    <string name="context_files_delete_locally">Delete on phone</string>
+    <string name="context_delete_globally">Delete permanently</string>
+    <string name="context_folder_share">Share with…</string>
+    <string name="context_folder_share_info">See shared list</string>
+
+    <!-- Menu items -->
+    <string name="action_refresh">Refresh</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_add_file">Add File</string>
+    <string name="action_add_folder">Create Folder</string>
+
+    <!-- Detail text for all file states -->
+    <string name="file_state_in_sync">synchronized</string>
+    <string name="file_state_downloading">downloading…</string>
+    <string name="file_state_on_air">tap to download</string>
+    <string name="file_state_outdated">tap to download newest version</string>
+    <string name="file_state_uploading">uploading…</string>
+    <string name="file_state_deleting">deleting…</string>
+    <string name="file_state_sharing">sharing…</string>
+    <string name="file_state_shared">shared</string>
+
+    <!-- Dialog creating a new folder -->
+    <string name="create_folder_title">New folder</string>
+    <string name="create_folder_message">Enter the name of the folder:</string>
+
+    <!-- Dialog sharing a folder -->
+    <string name="share_folder_title">Share folder</string>
+    <string name="share_folder_message">Enter the username of the user to invite:</string>
+    <string name="share_folder_permission_write">Allow changes</string>
+
+    <!-- Dialog sharing info -->
+    <string name="share_info_title">Access list</string>
+    <string name="share_info_message">The following users have access to folder \'%1$s\':</string>
+    <string name="share_info_readonly">(read-only)</string>
+</resources>

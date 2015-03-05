@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="org.hive2hive.mobile.files.FilesActivity">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:orderInCategory="100"
+        android:title="@string/action_refresh"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_add_file"
+        android:icon="@drawable/ic_action_upload"
+        android:orderInCategory="200"
+        android:title="@string/action_add_file"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_add_folder"
+        android:icon="@android:drawable/ic_menu_add"
+        android:orderInCategory="300"
+        android:title="@string/action_add_folder"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:orderInCategory="400"
+        android:title="@string/action_settings"/>
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="500"
+        android:title="@string/action_help"/>
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@android:drawable/ic_lock_lock"
+        android:orderInCategory="600"
+        android:title="@string/action_logout"/>
+</menu>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.hive2hive.core-1.2.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/hive2hive/org.hive2hive.core/1.2.2/org.hive2hive.core-1.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/hive2hive/org.hive2hive.core/1.2.2/org.hive2hive.core-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

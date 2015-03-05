@@ -1,0 +1,23 @@
+<resources>
+    <string name="title_activity_login">Login</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_pin">PIN</string>
+    <string name="prompt_store_credentials">Remember credentials</string>
+    <string name="action_sign_in">Sign in or register</string>
+
+    <string name="error_incorrect_credentials">These credentials are incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="progress_login_title">Logging in…</string>
+    <string name="progress_login_encrypt">Encrypting your credentials…</string>
+    <string name="progress_login_register_check">Checking for existing user…</string>
+    <string name="progress_login_register">Registering…</string>
+    <string name="progress_login_login">Logging in…</string>
+
+    <string name="progress_logout_title">Logging out…</string>
+    <string name="progress_logout_msg">Please wait…</string>
+    <string name="error_logout_failed">Logout failed</string>
+</resources>

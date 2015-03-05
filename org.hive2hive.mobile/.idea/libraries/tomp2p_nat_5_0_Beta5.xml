@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="tomp2p-nat-5.0-Beta5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.tomp2p/tomp2p-nat/5.0-Beta5/834e3e198f16e71cd094d26ca7aef1417df8c427/tomp2p-nat-5.0-Beta5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.tomp2p/tomp2p-nat/5.0-Beta5/ceac083ce1b93591d0bb3c13e534b103eb86d7e8/tomp2p-nat-5.0-Beta5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

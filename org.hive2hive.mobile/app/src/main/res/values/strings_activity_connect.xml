@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- ConnectActivity -->
+    <string name="bootstrap_activity_title">Connect to the Network</string>
+    <string name="bootstrap_relay_switch">Mode</string>
+    <string name="bootstrap_address">Bootstrap Address</string>
+    <string name="bootstrap_port">Port</string>
+    <string name="bootstrap_map_update">Map update interval (s)</string>
+    <string name="bootstrap_expert_check">Show advanced settings</string>
+    <string name="bootstrap_button_connect">Connect</string>
+    <string name="bootstrap_button_disconnect">Disconnect</string>
+    <string name="bootstrap_connected">Node is connected</string>
+    <string name="bootstrap_disconnected">Node could not connect</string>
+
+    <string name="warn_gcm_sender_missing">Configure the GCM sender ID to use GCM Push</string>
+    <string name="warn_disconnected">No network connection detected …</string>
+
+    <string name="relay_mode_gcm">GCM Push</string>
+    <string name="relay_mode_tcp">Open TCP</string>
+    <string name="relay_mode_full">Full Peer</string>
+    <string name="relay_mode_recommended">(recommended)</string>
+
+    <string name="progress_connect_title">Connecting to network …</string>
+    <string name="progress_connect_resolve_address">Resolving network address …</string>
+    <string name="progress_connect_bootstrapping">Bootstrapping …</string>
+    <string name="progress_connect_register_gcm">Registering mobile device …</string>
+    <string name="progress_connect_relay">Connecting to relay …</string>
+
+    <string name="progress_disconnect_title">Disconnecting …</string>
+    <string name="progress_disconnect_shutdown">Shutting down peer …</string>
+
+    <string name="action_goto_login">Go to login</string>
+</resources>

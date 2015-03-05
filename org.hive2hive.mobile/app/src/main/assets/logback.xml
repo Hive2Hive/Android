@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+	<!-- Appenders -->
+	<appender name="LOGCAT" class="ch.qos.logback.classic.android.LogcatAppender">
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Loggers -->
+    <logger name="net.tomp2p" level="INFO" />
+    <!--<logger name="net.tomp2p.relay" level="DEBUG" />-->
+
+    <!--
+    <logger name="net.tomp2p.message.Decoder" level="DEBUG" />
+    -->
+
+    <logger name="org.hive2hive.core" leve="TRACE" />
+	<logger name="io.netty" level="ERROR" /> <!-- mute netty library -->
+	
+	<root level="DEBUG">
+		<appender-ref ref="LOGCAT" />
+	</root>
+</configuration>

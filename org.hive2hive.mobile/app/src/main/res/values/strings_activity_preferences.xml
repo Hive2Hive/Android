@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Preferences -->
+    <string name="pref_cat_networking">Networking</string>
+    <string name="pref_cat_about">About</string>
+
+    <string name="pref_port">Binding port</string>
+    <string name="pref_port_key">pref.port</string>
+
+    <string name="pref_map_update_interval">Poll interval</string>
+    <string name="pref_map_update_interval_key">pref.map</string>
+    <string-array name="mapUpdateInterval">
+        <item name="30">Every 30 seconds</item>
+        <item name="60">Every minute</item>
+        <item name="120">Every 2 minutes seconds (default)</item>
+        <item name="300">Every 5 minutes</item>
+        <item name="600">Every 10 minutes</item>
+    </string-array>
+    <string-array name="mapUpdateIntervalValues">
+        <item name="30">30</item>
+        <item name="60">60</item>
+        <item name="120">120</item>
+        <item name="300">300</item>
+        <item name="600">600</item>
+    </string-array>
+
+    <string name="pref_gcm_sender">GCM sender ID</string>
+    <string name="pref_gcm_sender_key">pref.gcmsender</string>
+
+    <string name="pref_path">Hive2Hive Root path</string>
+    <string name="pref_path_key">pref.path</string>
+
+    <string name="pref_h2h_version">Hive2Hive version</string>
+    <string name="pref_h2h_version_key">pref.version.h2h</string>
+
+    <string name="pref_app_version">App version</string>
+    <string name="pref_app_version_key">pref.version.app</string>
+
+    <string name="pref_author">Author</string>
+
+    <string name="pref_contact">Contact</string>
+    <string name="pref_contact_summary">Give feedback or ask a question</string>
+    <string name="pref_contact_uri">mailto:info@hive2hive.com</string>
+    <string name="pref_contact_subject">Feedback Android App</string>
+</resources>
