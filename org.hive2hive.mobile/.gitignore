@@ -27,5 +27,8 @@ proguard/
 # Log Files
 *.log
 
+# Android Studio files (IntelliJ)
+.idea/
+
 # Apple files
 .DS_Store
