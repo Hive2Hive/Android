@@ -1,7 +1,7 @@
-Hive2Hive Android Application
-============================
+Hive2Hive Android App
+=====================
 
-In this repository, you can find the sources of the [Hive2Hive Android application](https://play.google.com/store/apps/details?id=org.hive2hive.mobile) and simple runnable to create a network with 5 initial peers on a computer or server.
+In this repository, you can find the sources of the **Hive2Hive Android App** ([Play Store](https://play.google.com/store/apps/details?id=org.hive2hive.mobile)) and simple runnable to create a network with 5 initial peers on a computer or server.
 
 Also visit the [Wiki](https://github.com/Hive2Hive/Android/wiki) to get more information.
 
