@@ -13,8 +13,20 @@ import android.provider.OpenableColumns;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 
 /**
  * Created by Nico Rutishauser on 08.09.14.
@@ -22,7 +34,8 @@ import org.slf4j.LoggerFactory;
 public class ApplicationHelper {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ApplicationHelper.class);
-	private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+	private static final String EXTERNAL_IP_LOOKUP_URL = "http://wtfismyip.com/text";
 
 	/**
 	 * Kills the application immediately. Only use in emergency!

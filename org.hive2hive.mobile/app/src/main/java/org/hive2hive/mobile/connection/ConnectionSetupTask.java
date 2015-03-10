@@ -25,6 +25,7 @@ import org.hive2hive.core.serializer.IH2HSerialize;
 import org.hive2hive.mobile.BuildConfig;
 import org.hive2hive.mobile.H2HApplication;
 import org.hive2hive.mobile.R;
+import org.hive2hive.mobile.common.ApplicationHelper;
 import org.hive2hive.mobile.common.BaseProgressTask;
 import org.hive2hive.mobile.common.ISuccessFailListener;
 import org.hive2hive.mobile.common.RelayMode;

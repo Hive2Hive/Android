@@ -3,9 +3,11 @@ package org.hive2hive.mobile;
 import android.app.Application;
 import android.content.Context;
 
+import net.tomp2p.connection.ConnectionBean;
 import net.tomp2p.dht.PeerDHT;
 import net.tomp2p.relay.buffer.BufferRequestListener;
 
+import org.hive2hive.core.H2HConstants;
 import org.hive2hive.core.api.interfaces.IH2HNode;
 import org.hive2hive.core.api.interfaces.INetworkConfiguration;
 import org.hive2hive.core.network.IPeerHolder;
@@ -39,6 +41,11 @@ public class H2HApplication extends Application implements IPeerHolder {
 //		ConnectionChangeListener connectionChangeListener = new ConnectionChangeListener(this);
 //		IntentFilter filter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
 //		registerReceiver(connectionChangeListener, filter);
+
+		// increase timeouts
+		ConnectionBean.DEFAULT_CONNECTION_TIMEOUT_TCP = 20000;
+		ConnectionBean.DEFAULT_TCP_IDLE_SECONDS = 12;
+		ConnectionBean.DEFAULT_UDP_IDLE_SECONDS = 12;
 	}
 
 	@Override

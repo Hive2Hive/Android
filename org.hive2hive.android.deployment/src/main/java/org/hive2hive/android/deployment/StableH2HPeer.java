@@ -4,6 +4,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeUnit;
 
+import net.tomp2p.connection.ConnectionBean;
 import net.tomp2p.nat.PeerBuilderNAT;
 import net.tomp2p.peers.PeerAddress;
 import net.tomp2p.relay.RelayType;
@@ -36,6 +37,13 @@ public class StableH2HPeer {
 	private static final IFileConfiguration fileConfig = FileConfiguration.createDefault();
 
 	private static final Logger logger = LoggerFactory.getLogger(StableH2HPeer.class);
+
+	static {
+		// increase timeouts
+		ConnectionBean.DEFAULT_CONNECTION_TIMEOUT_TCP = 20000;
+		ConnectionBean.DEFAULT_TCP_IDLE_SECONDS = 12;
+		ConnectionBean.DEFAULT_UDP_IDLE_SECONDS = 12;
+	}
 
 	public static void main(String[] args) throws UnknownHostException {
 		Config config = ConfigFactory.load("deployment-single.conf");
